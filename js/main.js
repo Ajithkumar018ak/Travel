@@ -3101,3 +3101,63 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 });
+
+
+/* =====================================================
+   3D LOGIN DOOR ANIMATION
+===================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const doorScene = document.getElementById("loginDoorScene");
+
+    if (!doorScene) return;
+
+    const leftDoor = doorScene.querySelector(".login-door-left");
+    const rightDoor = doorScene.querySelector(".login-door-right");
+
+    let doorOpened = false;
+
+    function openLoginDoor() {
+
+        if (doorOpened) return;
+
+        doorOpened = true;
+
+        doorScene.classList.add("door-opening");
+
+        setTimeout(() => {
+
+            doorScene.classList.add("door-opened");
+
+        }, 1200);
+
+        setTimeout(() => {
+
+            doorScene.classList.add("door-hidden");
+
+        }, 2200);
+
+    }
+
+
+    /* AUTOMATIC DOOR OPEN */
+
+    setTimeout(() => {
+
+        openLoginDoor();
+
+    }, 800);
+
+
+    /* REPLAY ON CLICK */
+
+    doorScene.addEventListener("click", () => {
+
+        if (doorOpened) return;
+
+        openLoginDoor();
+
+    });
+
+});
