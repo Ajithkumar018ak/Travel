@@ -1,0 +1,750 @@
+/* =========================================
+   TRAVORA EXPERIENCES PAGE
+========================================= */
+
+:root {
+    --exp-bg: #f5f3ed;
+    --exp-white: #ffffff;
+    --exp-dark: #122b3b;
+    --exp-muted: #71808a;
+    --exp-accent: #c18b52;
+    --exp-border: #dedbd3;
+}
+
+.experience-hero,
+.experience-intro,
+.experience-categories,
+.signature-experiences,
+.experience-banner,
+.more-experiences,
+.experience-final-cta {
+    width: 100%;
+}
+
+.experience-hero {
+    background: var(--exp-bg);
+    padding: 85px 6% 75px;
+    overflow: hidden;
+}
+
+.experience-hero-inner {
+    max-width: 1500px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 0.88fr 1.12fr;
+    align-items: center;
+    gap: 65px;
+}
+
+/* HERO LEFT */
+
+.experience-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.experience-eyebrow,
+.section-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--exp-accent);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+}
+
+.experience-eyebrow span {
+    width: 30px;
+    height: 2px;
+    background: var(--exp-accent);
+}
+
+.experience-content-slider {
+    position: relative;
+    min-height: 390px;
+    margin-top: 35px;
+}
+
+.experience-content-item {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(22px);
+    pointer-events: none;
+    transition: opacity 0.6s ease, transform 0.6s ease,
+        visibility 0.6s ease;
+}
+
+.experience-content-item.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.experience-number {
+    display: block;
+    color: var(--exp-muted);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 22px;
+}
+
+.experience-content-item h1 {
+    color: var(--exp-dark);
+    font-family: "Playfair Display", serif;
+    font-size: clamp(48px, 5.5vw, 82px);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -2px;
+    margin: 0;
+}
+
+.experience-content-item h1 span {
+    color: var(--exp-accent);
+    font-style: italic;
+}
+
+.experience-content-item p {
+    max-width: 400px;
+    color: #66747d;
+    font-size: 15px;
+    line-height: 1.9;
+    margin: 25px 0 28px;
+}
+
+.experience-explore-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 22px;
+    padding: 16px 22px;
+    background: var(--exp-dark);
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: 0.3s;
+}
+
+.experience-explore-btn i {
+    transition: transform 0.3s;
+}
+
+.experience-explore-btn:hover {
+    background: var(--exp-accent);
+}
+
+.experience-explore-btn:hover i {
+    transform: translateX(5px);
+}
+
+/* HERO CONTROLS */
+
+.experience-hero-controls {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    max-width: 340px;
+    margin-top: 20px;
+}
+
+.experience-arrow {
+    width: 44px;
+    height: 44px;
+    border: 1px solid #c9c5bb;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--exp-dark);
+    cursor: pointer;
+    transition: 0.3s;
+    flex-shrink: 0;
+}
+
+.experience-arrow:hover {
+    background: var(--exp-dark);
+    color: white;
+    border-color: var(--exp-dark);
+}
+
+.experience-progress {
+    flex: 1;
+}
+
+.experience-progress-track {
+    height: 3px;
+    background: #d9d5cc;
+    overflow: hidden;
+}
+
+.experience-progress-track span {
+    display: block;
+    height: 100%;
+    width: 20%;
+    background: var(--exp-accent);
+    transition: width 0.5s ease;
+}
+
+/* HERO RIGHT IMAGE */
+
+.experience-hero-visual {
+    position: relative;
+    padding: 0 0 35px 25px;
+}
+
+.experience-image-frame {
+    height: 590px;
+    position: relative;
+    overflow: hidden;
+    background: #ddd;
+}
+
+.experience-image-slider {
+    position: absolute;
+    inset: 0;
+}
+
+.experience-image-item {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.08);
+    transition: opacity 1s ease, transform 5.5s ease,
+        visibility 1s ease;
+}
+
+.experience-image-item.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.experience-image-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.experience-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        transparent 45%,
+        rgba(7, 20, 29, 0.72) 100%
+    );
+    pointer-events: none;
+}
+
+.experience-image-caption {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    color: white;
+    z-index: 2;
+}
+
+.experience-image-caption span {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    color: #e4c49f;
+}
+
+.experience-image-caption h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+    font-weight: 500;
+    margin: 12px 0 0;
+}
+
+.experience-image-count {
+    position: absolute;
+    right: 35px;
+    bottom: 45px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    z-index: 2;
+}
+
+.count-line {
+    width: 35px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.experience-floating-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 16px 22px;
+    background: var(--exp-white);
+    color: var(--exp-dark);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.experience-floating-label i {
+    color: var(--exp-accent);
+    font-size: 15px;
+}
+
+/* INTRO SECTION */
+
+.experience-intro {
+    padding: 115px 8%;
+    display: grid;
+    grid-template-columns: 1fr 0.7fr;
+    gap: 80px;
+    align-items: end;
+    background: white;
+}
+
+.experience-intro-left h2 {
+    font-family: "Playfair Display", serif;
+    color: var(--exp-dark);
+    font-size: clamp(40px, 5vw, 65px);
+    line-height: 1.2;
+    font-weight: 500;
+    margin: 20px 0 0;
+}
+
+.experience-intro-left h2 span {
+    color: var(--exp-accent);
+    font-style: italic;
+}
+
+.experience-intro-right p {
+    color: var(--exp-muted);
+    font-size: 15px;
+    line-height: 1.9;
+    margin: 0 0 25px;
+}
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--exp-dark);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--exp-accent);
+}
+
+.text-link i {
+    color: var(--exp-accent);
+}
+
+/* SECTION HEADING */
+
+.experience-categories,
+.signature-experiences,
+.more-experiences {
+    padding: 100px 6%;
+    background: var(--exp-bg);
+}
+
+.experience-section-heading {
+    max-width: 1500px;
+    margin: 0 auto 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 30px;
+}
+
+.experience-section-heading h2 {
+    font-family: "Playfair Display", serif;
+    color: var(--exp-dark);
+    font-size: clamp(38px, 4.5vw, 58px);
+    font-weight: 500;
+    margin: 15px 0 0;
+}
+
+.experience-section-heading h2 span {
+    color: var(--exp-accent);
+    font-style: italic;
+}
+
+.experience-section-heading > p {
+    color: var(--exp-muted);
+    font-size: 13px;
+    line-height: 1.8;
+    text-align: right;
+    margin: 0 0 5px;
+}
+
+/* CATEGORY GRID */
+
+.experience-category-grid {
+    max-width: 1500px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 280px 280px;
+    gap: 16px;
+}
+
+.experience-category-card {
+    position: relative;
+    overflow: hidden;
+    background: #ddd;
+}
+
+.experience-category-card.category-large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.experience-category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s ease;
+}
+
+.experience-category-card:hover img {
+    transform: scale(1.07);
+}
+
+.category-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        transparent 25%,
+        rgba(7, 20, 29, 0.82) 100%
+    );
+}
+
+.category-content {
+    position: absolute;
+    bottom: 28px;
+    left: 28px;
+    color: white;
+    z-index: 2;
+}
+
+.category-content > span {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #e4c49f;
+}
+
+.category-content h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 27px;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+.category-content a {
+    display: inline-flex;
+    gap: 12px;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.category-content a i {
+    color: #e4c49f;
+}
+
+/* SIGNATURE GRID */
+
+.signature-experiences {
+    background: white;
+}
+
+.signature-grid {
+    max-width: 1500px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.signature-card {
+    min-width: 0;
+}
+
+.signature-image {
+    height: 370px;
+    position: relative;
+    overflow: hidden;
+    background: #ddd;
+}
+
+.signature-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s ease;
+}
+
+.signature-card:hover .signature-image img {
+    transform: scale(1.07);
+}
+
+.signature-image > span {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    width: 38px;
+    height: 38px;
+    background: white;
+    color: var(--exp-dark);
+    display: grid;
+    place-items: center;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.signature-info {
+    padding: 20px 2px;
+}
+
+.signature-info span {
+    color: var(--exp-accent);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.signature-info h3 {
+    color: var(--exp-dark);
+    font-family: "Playfair Display", serif;
+    font-size: 23px;
+    font-weight: 500;
+    margin: 9px 0 0;
+}
+
+/* FULL WIDTH BANNER */
+
+.experience-banner {
+    height: 620px;
+    position: relative;
+    overflow: hidden;
+    background: #182c38;
+}
+
+.experience-banner > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.experience-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(8, 22, 31, 0.83),
+        rgba(8, 22, 31, 0.15)
+    );
+}
+
+.experience-banner-content {
+    position: absolute;
+    left: 9%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+}
+
+.experience-banner-content > span {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #e7c49c;
+}
+
+.experience-banner-content h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(48px, 6vw, 82px);
+    line-height: 1.1;
+    font-weight: 500;
+    margin: 25px 0 35px;
+}
+
+.experience-banner-content h2 i {
+    color: #e7c49c;
+}
+
+.experience-banner-content a {
+    display: inline-flex;
+    align-items: center;
+    gap: 25px;
+    padding: 17px 24px;
+    background: white;
+    color: var(--exp-dark);
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 800;
+    transition: 0.3s;
+}
+
+.experience-banner-content a:hover {
+    background: var(--exp-accent);
+    color: white;
+}
+
+/* MORE EXPERIENCES */
+
+.more-experiences {
+    background: var(--exp-bg);
+}
+
+.more-experiences-grid {
+    max-width: 1500px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.more-experience-card {
+    height: 430px;
+    position: relative;
+    overflow: hidden;
+    background: #ddd;
+}
+
+.more-experience-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s ease;
+}
+
+.more-experience-card:hover img {
+    transform: scale(1.07);
+}
+
+.more-experience-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        transparent 35%,
+        rgba(7, 20, 29, 0.85)
+    );
+}
+
+.more-experience-card > div {
+    position: absolute;
+    z-index: 2;
+    bottom: 30px;
+    left: 28px;
+    color: white;
+}
+
+.more-experience-card span {
+    color: #e7c49c;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.more-experience-card h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 27px;
+    font-weight: 500;
+    margin: 10px 0 0;
+}
+
+/* FINAL CTA */
+
+.experience-final-cta {
+    min-height: 550px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--exp-dark);
+    color: white;
+}
+
+.experience-final-image {
+    min-height: 550px;
+    overflow: hidden;
+}
+
+.experience-final-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.experience-final-content {
+    padding: 80px 10%;
+    align-self: center;
+}
+
+.experience-final-content > span {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    color: #e7c49c;
+}
+
+.experience-final-content h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(42px, 4.5vw, 65px);
+    line-height: 1.15;
+    font-weight: 500;
+    margin: 25px 0;
+}
+
+.experience-final-content h2 i {
+    color: #e7c49c;
+}
+
+.experience-final-content p {
+    max-width: 420px;
+    color: #c0cbd1;
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+
+.experience-final-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 22px;
+    padding: 17px 23px;
+    background: white;
+    color: var(--exp-dark);
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 800;
+    transition: 0.3s;
+}
+
+.experience-final-btn:hover {
+    background: var(--exp-accent);
+    color: white;
+}

@@ -1,0 +1,1379 @@
+/* =========================================
+   TRAVORA — PACKAGES PAGE
+   PREMIUM TRAVEL DESIGN
+========================================= */
+
+:root {
+    --navy: #102a43;
+    --navy-light: #173f5f;
+    --blue: #247ba0;
+    --orange: #f28c45;
+    --white: #ffffff;
+    --light: #f4f7f9;
+    --text: #526477;
+    --muted: #8997a5;
+    --border: #e7edf1;
+    --shadow: 0 18px 50px rgba(16, 42, 67, .10);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.packages-hero,
+.package-destinations,
+.travel-styles,
+.trending-section,
+.hidden-gems,
+.seasonal-section,
+.experience-section,
+.world-highlights,
+.featured-packages,
+.journey-moments,
+.travel-inspiration,
+.packages-cta {
+    position: relative;
+    overflow: hidden;
+}
+
+.package-destinations,
+.travel-styles,
+.trending-section,
+.hidden-gems,
+.seasonal-section,
+.experience-section,
+.world-highlights,
+.featured-packages,
+.travel-inspiration {
+    padding: 110px 5%;
+}
+
+.section-eyebrow {
+    display: block;
+    color: var(--orange);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 14px;
+}
+
+.package-section-heading,
+.trending-heading,
+.world-highlights-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 45px;
+}
+
+.package-section-heading h2,
+.trending-heading h2,
+.hidden-gems-heading h2,
+.experience-heading h2,
+.world-highlights-heading h2 {
+    color: var(--navy);
+    font-size: clamp(32px, 4vw, 49px);
+    font-weight: 800;
+    letter-spacing: -1.8px;
+    line-height: 1.13;
+    margin: 0;
+}
+
+.package-section-heading h2 span,
+.trending-heading h2 span,
+.hidden-gems-heading h2 span,
+.experience-heading h2 span,
+.world-highlights-heading h2 span {
+    color: var(--orange);
+}
+
+/* =========================================
+   01. HERO
+========================================= */
+
+.packages-hero {
+    padding: 85px 5% 35px;
+    background: var(--navy);
+    color: var(--white);
+    isolation: isolate;
+}
+
+.packages-hero::before {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    top: -300px;
+    right: -150px;
+    background: rgba(36, 123, 160, .20);
+    filter: blur(2px);
+    z-index: -1;
+}
+
+.packages-hero::after {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    bottom: -250px;
+    left: -150px;
+    background: rgba(242, 140, 69, .10);
+    z-index: -1;
+}
+
+.packages-hero-top {
+    max-width: 1250px;
+    margin: 0 auto 50px;
+}
+
+.packages-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: #c4d3df;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.packages-label > span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--orange);
+    box-shadow: 0 0 15px var(--orange);
+}
+
+.packages-hero-top h1 {
+    max-width: 850px;
+    font-size: clamp(45px, 7vw, 88px);
+    font-weight: 850;
+    letter-spacing: -4px;
+    line-height: 1.02;
+    margin: 22px 0;
+}
+
+.packages-hero-top h1 span {
+    color: var(--orange);
+    font-style: italic;
+}
+
+.packages-hero-top p {
+    color: #c3d0da;
+    font-size: 15px;
+    letter-spacing: .4px;
+}
+
+/* Carousel */
+
+.package-carousel {
+    width: 100%;
+    max-width: 1350px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.package-carousel-track {
+    display: flex;
+    gap: 18px;
+    transition: transform .85s cubic-bezier(.22, .75, .25, 1);
+    will-change: transform;
+}
+
+.package-slide {
+    flex: 0 0 calc(33.333% - 12px);
+    height: 430px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    transform: scale(.92);
+    opacity: .55;
+    transition: transform .8s ease, opacity .8s ease;
+    isolation: isolate;
+}
+
+.package-slide.active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.package-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s ease;
+}
+
+.package-slide:hover img {
+    transform: scale(1.08);
+}
+
+.package-slide-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+        0deg,
+        rgba(7, 24, 40, .92) 0%,
+        rgba(7, 24, 40, .15) 70%,
+        transparent 100%
+    );
+}
+
+.package-slide-content {
+    position: absolute;
+    z-index: 2;
+    left: 27px;
+    right: 20px;
+    bottom: 28px;
+    color: white;
+}
+
+.package-slide-content > span {
+    color: #ffb77f;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.package-slide-content h2 {
+    font-size: 35px;
+    margin: 10px 0 5px;
+    font-weight: 800;
+}
+
+.package-slide-content p {
+    font-size: 13px;
+    color: rgba(255,255,255,.75);
+    margin: 0 0 20px;
+}
+
+.package-slide-content a {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    font-size: 12px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: color .3s ease, gap .3s ease;
+}
+
+.package-slide-content a:hover {
+    color: var(--orange);
+    gap: 18px;
+}
+
+/* Carousel Controls */
+
+.package-carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin: 35px 0 20px;
+}
+
+.carousel-arrow {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.35);
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.carousel-arrow:hover {
+    background: var(--orange);
+    border-color: var(--orange);
+    transform: scale(1.08);
+}
+
+.carousel-pagination {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border: 0;
+    border-radius: 20px;
+    background: rgba(255,255,255,.4);
+    padding: 0;
+    cursor: pointer;
+    transition: width .3s ease, background .3s ease;
+}
+
+.carousel-dot.active {
+    width: 30px;
+    background: var(--orange);
+}
+
+.packages-hero-bottom {
+    max-width: 1350px;
+    margin: 40px auto 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #b6c5d0;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+.packages-hero-bottom div {
+    width: 70px;
+    height: 1px;
+    background: var(--orange);
+}
+
+/* =========================================
+   02. POPULAR DESTINATIONS
+========================================= */
+
+.package-destinations {
+    background: white;
+}
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--navy);
+    font-size: 12px;
+    font-weight: 800;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color .3s ease, gap .3s ease;
+}
+
+.text-link:hover {
+    color: var(--orange);
+    gap: 18px;
+}
+
+.destination-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    grid-template-rows: repeat(2, 300px);
+    gap: 18px;
+}
+
+.destination-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    isolation: isolate;
+}
+
+.destination-card.destination-large {
+    grid-row: span 2;
+}
+
+.destination-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .9s ease;
+}
+
+.destination-card:hover img {
+    transform: scale(1.09);
+}
+
+.destination-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        0deg,
+        rgba(8, 29, 47, .85),
+        transparent 75%
+    );
+    z-index: 1;
+}
+
+.destination-info {
+    position: absolute;
+    z-index: 2;
+    bottom: 24px;
+    left: 24px;
+    right: 20px;
+    color: white;
+}
+
+.destination-info > span {
+    color: #ffb77f;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.destination-info h3 {
+    font-size: 27px;
+    margin: 8px 0 13px;
+}
+
+.destination-info a {
+    color: white;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 800;
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    transition: color .3s ease, gap .3s ease;
+}
+
+.destination-info a:hover {
+    color: var(--orange);
+    gap: 16px;
+}
+
+/* =========================================
+   03. TRAVEL STYLES
+========================================= */
+
+.travel-styles {
+    background: var(--light);
+}
+
+.travel-style-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.travel-style-card {
+    height: 350px;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    color: white;
+    isolation: isolate;
+}
+
+.travel-style-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .8s ease;
+}
+
+.travel-style-card:hover img {
+    transform: scale(1.1);
+}
+
+.travel-style-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        0deg,
+        rgba(8, 28, 45, .9),
+        transparent 75%
+    );
+    z-index: 1;
+}
+
+.travel-style-card > div {
+    position: absolute;
+    z-index: 2;
+    bottom: 22px;
+    left: 22px;
+    right: 22px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+}
+
+.travel-style-card > div span {
+    grid-column: 1 / -1;
+    color: #ffb77f;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.travel-style-card h3 {
+    font-size: 25px;
+    margin: 0;
+}
+
+.travel-style-card i {
+    transition: transform .3s ease, color .3s ease;
+}
+
+.travel-style-card:hover i {
+    color: var(--orange);
+    transform: translate(4px, -4px);
+}
+
+/* =========================================
+   04. TRENDING DESTINATIONS
+========================================= */
+
+.trending-section {
+    background: var(--navy);
+    padding: 110px 5%;
+}
+
+.trending-heading h2 {
+    color: white;
+}
+
+.trending-count {
+    color: #c0ced8;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.trending-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.trending-card {
+    position: relative;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 14px;
+    isolation: isolate;
+}
+
+.trending-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .9s ease;
+}
+
+.trending-card:hover img {
+    transform: scale(1.1);
+}
+
+.trending-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        0deg,
+        rgba(7, 23, 39, .88),
+        transparent 70%
+    );
+    z-index: 1;
+}
+
+.trending-info {
+    position: absolute;
+    z-index: 2;
+    left: 23px;
+    bottom: 23px;
+    color: white;
+}
+
+.trending-info span {
+    color: #ffb77f;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+.trending-info h3 {
+    font-size: 25px;
+    margin: 7px 0 0;
+}
+
+.trending-number {
+    position: absolute;
+    z-index: 2;
+    right: 20px;
+    top: 20px;
+    color: white;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+/* =========================================
+   05. HIDDEN GEMS
+========================================= */
+
+.hidden-gems {
+    padding: 110px 5%;
+    background: white;
+}
+
+.hidden-gems-heading {
+    margin-bottom: 42px;
+}
+
+.hidden-gems-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.hidden-gem-card {
+    position: relative;
+    height: 380px;
+    border-radius: 15px;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.hidden-gem-card.gem-main {
+    grid-column: span 2;
+}
+
+.hidden-gem-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .9s ease;
+}
+
+.hidden-gem-card:hover img {
+    transform: scale(1.1);
+}
+
+.gem-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        0deg,
+        rgba(7, 27, 43, .88),
+        transparent 75%
+    );
+    z-index: 1;
+}
+
+.gem-info {
+    position: absolute;
+    z-index: 2;
+    bottom: 24px;
+    left: 23px;
+    color: white;
+}
+
+.gem-info span {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #ffb77f;
+}
+
+.gem-info h3 {
+    font-size: 27px;
+    margin: 8px 0 14px;
+}
+
+.gem-info a {
+    color: white;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: color .3s ease, gap .3s ease;
+}
+
+.gem-info a:hover {
+    color: var(--orange);
+    gap: 16px;
+}
+
+/* =========================================
+   06. SEASONAL ESCAPES
+========================================= */
+
+.seasonal-section {
+    padding: 110px 5%;
+    background: var(--light);
+}
+
+.seasonal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 23px;
+}
+
+.seasonal-card {
+    overflow: hidden;
+    border-radius: 16px;
+    background: white;
+    box-shadow: 0 8px 30px rgba(16,42,67,.05);
+    transition: transform .4s ease, box-shadow .4s ease;
+}
+
+.seasonal-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow);
+}
+
+.seasonal-image {
+    height: 270px;
+    position: relative;
+    overflow: hidden;
+}
+
+.seasonal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .8s ease;
+}
+
+.seasonal-card:hover .seasonal-image img {
+    transform: scale(1.08);
+}
+
+.seasonal-image > span {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    padding: 9px 13px;
+    background: var(--orange);
+    color: white;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.seasonal-info {
+    padding: 24px;
+}
+
+.seasonal-info > span {
+    color: var(--orange);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.seasonal-info h3 {
+    color: var(--navy);
+    font-size: 23px;
+    margin: 10px 0 18px;
+}
+
+.seasonal-info a {
+    color: var(--navy);
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: color .3s ease, gap .3s ease;
+}
+
+.seasonal-info a:hover {
+    color: var(--orange);
+    gap: 16px;
+}
+
+/* =========================================
+   07. TRAVEL EXPERIENCES
+========================================= */
+
+.experience-section {
+    padding: 110px 5%;
+    background: white;
+}
+
+.experience-heading {
+    margin-bottom: 42px;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.experience-card {
+    position: relative;
+    height: 310px;
+    overflow: hidden;
+    border-radius: 15px;
+    isolation: isolate;
+}
+
+.experience-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .9s ease;
+}
+
+.experience-card:hover img {
+    transform: scale(1.1);
+}
+
+.experience-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        0deg,
+        rgba(8, 27, 43, .9),
+        transparent 70%
+    );
+    z-index: 1;
+}
+
+.experience-info {
+    position: absolute;
+    z-index: 2;
+    bottom: 23px;
+    left: 23px;
+    color: white;
+}
+
+.experience-info span {
+    font-size: 10px;
+    color: #ffb77f;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.experience-info h3 {
+    font-size: 23px;
+    margin: 8px 0 0;
+}
+
+/* =========================================
+   08. WORLD HIGHLIGHTS
+========================================= */
+
+.world-highlights {
+    padding: 110px 5%;
+    background: var(--light);
+}
+
+.world-highlights-heading > span {
+    font-size: 10px;
+    color: var(--text);
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.world-gallery {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr 1fr;
+    grid-template-rows: 230px 230px;
+    gap: 15px;
+}
+
+.world-gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 13px;
+    isolation: isolate;
+}
+
+.world-gallery-item.world-gallery-large {
+    grid-row: span 2;
+}
+
+.world-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .8s ease;
+}
+
+.world-gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+.world-gallery-item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        0deg,
+        rgba(8, 29, 47, .65),
+        transparent 65%
+    );
+    z-index: 1;
+}
+
+.world-gallery-item > span {
+    position: absolute;
+    z-index: 2;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+/* =========================================
+   09. FEATURED PACKAGES
+========================================= */
+
+.featured-packages {
+    padding: 110px 5%;
+    background: white;
+}
+
+.featured-package-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.featured-package-card {
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    overflow: hidden;
+    background: white;
+    transition: transform .4s ease, box-shadow .4s ease;
+}
+
+.featured-package-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow);
+}
+
+.featured-package-image {
+    height: 260px;
+    position: relative;
+    overflow: hidden;
+}
+
+.featured-package-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .8s ease;
+}
+
+.featured-package-card:hover .featured-package-image img {
+    transform: scale(1.08);
+}
+
+.featured-package-image > span {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    background: var(--orange);
+    color: white;
+    padding: 9px 13px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.featured-package-info {
+    padding: 24px;
+}
+
+.package-location {
+    color: var(--orange);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.featured-package-info h3 {
+    color: var(--navy);
+    font-size: 23px;
+    margin: 9px 0 18px;
+}
+
+.package-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+}
+
+.package-meta span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    font-size: 11px;
+}
+
+.package-meta i {
+    color: var(--orange);
+}
+
+.featured-package-info > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 18px;
+    color: var(--navy);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800;
+    transition: color .3s ease;
+}
+
+.featured-package-info > a:hover {
+    color: var(--orange);
+}
+
+/* =========================================
+   10. JOURNEY MOMENTS
+========================================= */
+
+.journey-moments {
+    min-height: 540px;
+    display: flex;
+    align-items: center;
+    padding: 80px 5%;
+    background: var(--navy);
+    isolation: isolate;
+}
+
+.journey-moments > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.journey-moments-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+        90deg,
+        rgba(8, 28, 45, .92),
+        rgba(8, 28, 45, .28)
+    );
+}
+
+.journey-moments-content {
+    width: 100%;
+    max-width: 1250px;
+    margin: auto;
+    color: white;
+}
+
+.journey-moments-content > span {
+    color: #ffb77f;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.journey-moments-content h2 {
+    max-width: 750px;
+    font-size: clamp(43px, 6vw, 75px);
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1.08;
+    margin: 22px 0 30px;
+}
+
+.journey-moments-content h2 em {
+    color: var(--orange);
+    font-family: Georgia, serif;
+    font-weight: 400;
+}
+
+.journey-moments-content a {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    background: var(--orange);
+    color: white;
+    text-decoration: none;
+    padding: 16px 25px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 800;
+    transition: background .3s ease, color .3s ease, transform .3s ease;
+}
+
+.journey-moments-content a:hover {
+    background: white;
+    color: var(--navy);
+    transform: translateY(-4px);
+}
+
+/* =========================================
+   11. TRAVEL INSPIRATION
+========================================= */
+
+.travel-inspiration {
+    padding: 110px 5%;
+    background: white;
+}
+
+.inspiration-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    gap: 20px;
+}
+
+.inspiration-card {
+    height: 390px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    isolation: isolate;
+}
+
+.inspiration-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .9s ease;
+}
+
+.inspiration-card:hover img {
+    transform: scale(1.09);
+}
+
+.inspiration-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        0deg,
+        rgba(7, 26, 42, .9),
+        transparent 75%
+    );
+    z-index: 1;
+}
+
+.inspiration-info {
+    position: absolute;
+    z-index: 2;
+    bottom: 25px;
+    left: 23px;
+    right: 20px;
+    color: white;
+}
+
+.inspiration-info span {
+    color: #ffb77f;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.inspiration-info h3 {
+    font-size: 22px;
+    margin: 9px 0 15px;
+}
+
+.inspiration-info a {
+    display: inline-flex;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 800;
+    transition: color .3s ease, gap .3s ease;
+}
+
+.inspiration-info a:hover {
+    color: var(--orange);
+    gap: 16px;
+}
+
+/* =========================================
+   12. FINAL CTA
+========================================= */
+
+.packages-cta {
+    min-height: 470px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 5%;
+    text-align: center;
+    background: var(--navy);
+    isolation: isolate;
+}
+
+.packages-cta > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.packages-cta-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgba(8, 29, 47, .78);
+}
+
+.packages-cta-content {
+    max-width: 850px;
+    color: white;
+}
+
+.packages-cta-content > span {
+    color: #ffb77f;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.packages-cta-content h2 {
+    font-size: clamp(42px, 6vw, 70px);
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin: 20px 0 30px;
+}
+
+.packages-cta-content h2 em {
+    color: var(--orange);
+    font-family: Georgia, serif;
+    font-weight: 400;
+}
+
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    padding: 17px 30px;
+    border-radius: 50px;
+    background: var(--orange);
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800;
+    transition: .3s ease;
+}
+
+.cta-btn:hover {
+    background: white;
+    color: var(--navy);
+    transform: translateY(-4px);
+}
+
+/* =========================================
+   ANIMATION SYSTEM
+========================================= */
+
+@keyframes heroFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.packages-label {
+    animation: heroFadeUp .8s ease both;
+}
+
+.packages-hero-top h1 {
+    animation: heroFadeUp .9s .15s ease both;
+}
+
+.packages-hero-top p {
+    animation: heroFadeUp .9s .3s ease both;
+}
+
+.package-carousel {
+    animation: heroFadeUp 1s .35s ease both;
+}
+
+.packages-hero-bottom {
+    animation: heroFadeUp .8s .5s ease both;
+}
+
+/* Scroll Reveal */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(45px);
+    transition:
+        opacity .8s ease,
+        transform .8s cubic-bezier(.2, .7, .2, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-45px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(45px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Stagger */
+
+.destination-card,
+.trending-card,
+.hidden-gem-card,
+.seasonal-card,
+.travel-style-card,
+.experience-card,
+.featured-package-card,
+.inspiration-card {
+    transition-delay: var(--delay, 0ms);
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+
+    .reveal,
+    .reveal-left,
+    .reveal-right {
+        opacity: 1;
+        transform: none;
+    }
+}
