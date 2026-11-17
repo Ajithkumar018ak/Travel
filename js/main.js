@@ -3161,3 +3161,121 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+
+
+
+
+
+
+
+/* =========================================
+   LOGIN TAB SWITCHING
+========================================= */
+
+const userLoginTab = document.getElementById("userLoginTab");
+const adminLoginTab = document.getElementById("adminLoginTab");
+
+const userLoginForm = document.getElementById("userLoginForm");
+const adminLoginForm = document.getElementById("adminLoginForm");
+
+userLoginTab.addEventListener("click", () => {
+
+    userLoginTab.classList.add("active");
+    adminLoginTab.classList.remove("active");
+
+    userLoginForm.hidden = false;
+    adminLoginForm.hidden = true;
+
+});
+
+adminLoginTab.addEventListener("click", () => {
+
+    adminLoginTab.classList.add("active");
+    userLoginTab.classList.remove("active");
+
+    adminLoginForm.hidden = false;
+    userLoginForm.hidden = true;
+
+});
+
+
+/* =========================================
+   PASSWORD SHOW / HIDE
+========================================= */
+
+document.querySelectorAll("[data-toggle-password]").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const inputId = button.dataset.togglePassword;
+        const passwordInput = document.getElementById(inputId);
+        const icon = button.querySelector("i");
+
+        if (passwordInput.type === "password") {
+
+            passwordInput.type = "text";
+            icon.classList.replace("fa-eye", "fa-eye-slash");
+
+        } else {
+
+            passwordInput.type = "password";
+            icon.classList.replace("fa-eye-slash", "fa-eye");
+
+        }
+
+    });
+
+});
+
+
+/* =========================================
+   USER LOGIN
+========================================= */
+
+userLoginForm.addEventListener("submit", function (e) {
+
+    e.preventDefault();
+
+    const email = document.getElementById("userEmail").value.trim();
+    const password = document.getElementById("userPassword").value;
+
+    const message = document.getElementById("userLoginMessage");
+
+    if (!email || !password) {
+
+        message.textContent = "Please fill in all fields.";
+        return;
+
+    }
+
+    // Redirect to User Dashboard
+    window.location.href = "user-dashboard.html";
+
+});
+
+
+/* =========================================
+   ADMIN LOGIN
+========================================= */
+
+adminLoginForm.addEventListener("submit", function (e) {
+
+    e.preventDefault();
+
+    const email = document.getElementById("adminEmail").value.trim();
+    const password = document.getElementById("adminPassword").value;
+
+    const message = document.getElementById("adminLoginMessage");
+
+    if (!email || !password) {
+
+        message.textContent = "Please fill in all fields.";
+        return;
+
+    }
+
+    // Redirect to Admin Dashboard
+    window.location.href = "admin-dashboard.html";
+
+});

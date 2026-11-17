@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>VOYAGO | Admin Dashboard</title>
+    <title>Admin Dashboard</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1143,36 +1143,27 @@
                 gap: 6px;
             }
         }
+        .brand-logo {
+    width: 160px;
+    height: 55px;
+    object-fit: contain;
+    display: block;
+}
     </style>
 </head>
 
 <body>
 
-    <!-- PRELOADER -->
 
-    <div class="preloader" id="preloader">
-        <div class="loader-content">
-            <div class="loader-logo">VOYAGO<span>.</span></div>
-            <div class="loader-line"><span></span></div>
-            <p>ADMINISTRATION PANEL</p>
-        </div>
-    </div>
 
 
     <!-- SIDEBAR -->
 
     <aside class="sidebar" id="sidebar">
 
-        <a href="admin-dashboard.html" class="brand">
-            <span class="brand-icon">
-                <i class="fa-solid fa-compass"></i>
-            </span>
-
-            <span class="brand-name">
-                VOYAGO
-                <small>ADMIN PANEL</small>
-            </span>
-        </a>
+      <a href="admin-dashboard.html" class="brand">
+    <img src="assets/logo.webp" alt="VOYAGO Admin Logo" class="brand-logo">
+</a>
 
 
         <p class="sidebar-label">MAIN MENU</p>
@@ -1207,12 +1198,7 @@
                 </a>
             </li>
 
-            <li>
-                <a href="#" data-page="users">
-                    <i class="fa-solid fa-users"></i>
-                    Manage Users
-                </a>
-            </li>
+         
 
             <li>
                 <a href="#" data-page="reviews">
@@ -1221,19 +1207,7 @@
                 </a>
             </li>
 
-            <li>
-                <a href="#" data-page="reports">
-                    <i class="fa-solid fa-chart-column"></i>
-                    Reports
-                </a>
-            </li>
-
-            <li>
-                <a href="#" data-page="settings">
-                    <i class="fa-solid fa-gear"></i>
-                    Settings
-                </a>
-            </li>
+           
 
         </ul>
 
@@ -1241,14 +1215,14 @@
         <div class="sidebar-bottom">
 
             <div class="admin-card">
-                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100" alt="Admin">
+                <img src="assets/Avatar.webp" alt="Admin Avatar">
                 <div>
-                    <h4>James Anderson</h4>
+                   
                     <p>Super Administrator</p>
                 </div>
             </div>
 
-            <a href="404.html" class="logout-btn">
+            <a href="index.html" class="logout-btn">
                 <i class="fa-solid fa-right-from-bracket"></i>
                 Logout
             </a>
@@ -1296,10 +1270,10 @@
 
                 <a href="404.html" class="top-user">
 
-                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100" alt="Admin">
+                    <img src="assets/Avatar.webp" alt="Admin Avatar">
 
                     <div>
-                        <h4>James Anderson</h4>
+                     
                         <p>Super Admin</p>
                     </div>
 
@@ -1588,7 +1562,7 @@
 
                                     <td>
                                         <div class="customer-cell">
-                                            <img src="https://i.pravatar.cc/100?img=12" alt="">
+                                            <img src="assets/Avatar.webp" alt="Olivia Martin">
                                             <strong>Olivia Martin</strong>
                                         </div>
                                     </td>
@@ -1606,7 +1580,7 @@
 
                                     <td>
                                         <div class="customer-cell">
-                                            <img src="https://i.pravatar.cc/100?img=32" alt="">
+                                            <img src="assets/f1.webp" alt="Daniel Wilson">
                                             <strong>Daniel Wilson</strong>
                                         </div>
                                     </td>
@@ -1624,7 +1598,7 @@
 
                                     <td>
                                         <div class="customer-cell">
-                                            <img src="https://i.pravatar.cc/100?img=47" alt="">
+                                            <img src="assets/Avatar.webp" alt="Sophia Anderson">
                                             <strong>Sophia Anderson</strong>
                                         </div>
                                     </td>
@@ -1642,7 +1616,7 @@
 
                                     <td>
                                         <div class="customer-cell">
-                                            <img src="https://i.pravatar.cc/100?img=15" alt="">
+                                            <img src="assets/f1.webp" alt="William Brown">
                                             <strong>William Brown</strong>
                                         </div>
                                     </td>
@@ -1849,7 +1823,7 @@
                 <div class="destination-grid">
 
                     <div class="destination-card">
-                        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=700" alt="Switzerland">
+                        <img src="assets/a2.webp" alt="Switzerland">
 
                         <div class="destination-info">
                             <h3>Swiss Alpine Escape</h3>
@@ -1864,7 +1838,7 @@
 
 
                     <div class="destination-card">
-                        <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=700" alt="Maldives">
+                        <img src="assets/h13.webp" alt="Maldives">
 
                         <div class="destination-info">
                             <h3>Maldives Luxury Stay</h3>
@@ -1879,7 +1853,7 @@
 
 
                     <div class="destination-card">
-                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=700" alt="Paris">
+                        <img src="assets/h12.webp" alt="Paris">
 
                         <div class="destination-info">
                             <h3>Romantic Paris</h3>
@@ -1894,7 +1868,7 @@
 
 
                     <div class="destination-card">
-                        <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=700" alt="Bali">
+                        <img src="assets/h19.webp" alt="Bali">
 
                         <div class="destination-info">
                             <h3>Bali Island Discovery</h3>
@@ -1909,7 +1883,7 @@
 
 
                     <div class="destination-card">
-                        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=700" alt="Dubai">
+                        <img src="assets/p4.webp" alt="Dubai">
 
                         <div class="destination-info">
                             <h3>Dubai City Lights</h3>
@@ -1924,7 +1898,7 @@
 
 
                     <div class="destination-card">
-                        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=700" alt="Japan">
+                        <img src="assets/p28.webp" alt="Japan">
 
                         <div class="destination-info">
                             <h3>Japan Cultural Journey</h3>
@@ -1961,7 +1935,7 @@
                 <div class="destination-grid">
 
                     <div class="destination-card">
-                        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=700" alt="">
+                        <img src="assets/p27.webp" alt="">
                         <div class="destination-info">
                             <h3>Swiss Alps</h3>
                             <p>Switzerland · Europe</p>
@@ -1973,7 +1947,7 @@
                     </div>
 
                     <div class="destination-card">
-                        <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=700" alt="">
+                        <img src="assets/p33.webp" alt="">
                         <div class="destination-info">
                             <h3>Maldives</h3>
                             <p>Maldives · Asia</p>
@@ -1985,7 +1959,7 @@
                     </div>
 
                     <div class="destination-card">
-                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=700" alt="">
+                        <img src="assets/p44.webp" alt="">
                         <div class="destination-info">
                             <h3>Paris</h3>
                             <p>France · Europe</p>
@@ -1997,7 +1971,7 @@
                     </div>
 
                     <div class="destination-card">
-                        <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=700" alt="">
+                        <img src="assets/p37.webp" alt="">
                         <div class="destination-info">
                             <h3>Bali</h3>
                             <p>Indonesia · Asia</p>
@@ -2009,7 +1983,7 @@
                     </div>
 
                     <div class="destination-card">
-                        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=700" alt="">
+                        <img src="assets/p42.webp" alt="">
                         <div class="destination-info">
                             <h3>Dubai</h3>
                             <p>UAE · Middle East</p>
@@ -2021,7 +1995,7 @@
                     </div>
 
                     <div class="destination-card">
-                        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=700" alt="">
+                        <img src="assets/p26.webp" alt="">
                         <div class="destination-info">
                             <h3>Kyoto</h3>
                             <p>Japan · Asia</p>
